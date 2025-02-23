@@ -1,12 +1,9 @@
 <script setup>
-  
+  import NavBar from '@/components/NavBar.vue';
 </script>
 
 <template>
-  <div>
-    <h1>Home</h1>
-    <p>Home page content</p>
-  </div>
+  <NavBar />
 </template>
 
 <style scoped>

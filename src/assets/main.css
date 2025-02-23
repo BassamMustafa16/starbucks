@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-b-dark-green: #1e3932;
+  --color-b-light-green: #008248;
+  --color-b-very-light-green: #d4e9e2;
+  --color-b-grey: #f3f1e7;
+}
+
+* {
+  font-family: SoDoSans,Helvetica Neue,Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+}
