@@ -8,8 +8,8 @@ library.add(faLocationDot)
 </script>
 
 <template>
-  <nav class="flex justify-between py-4 px-6 shadow-md">
-    <div class="flex items-center gap-4 font-semibold ">
+  <nav class="flex flex-col md:flex-row justify-between py-4 px-6 shadow-md">
+    <div class="flex flex-col md:flex-row items-center gap-4 font-semibold mb-4 md:mb-0">
       <a
         aria-label="Home, Starbucks"
         class="block"
@@ -38,7 +38,7 @@ library.add(faLocationDot)
       <RouterLink to="/RewardsView" class="hover:text-b-light-green">Rewards</RouterLink>
       <RouterLink to="/GiftView" class="hover:text-b-light-green">Gift Cards</RouterLink>
     </div>
-    <div class="flex items-center  gap-4 font-semibold">
+    <div class="flex flex-col md:flex-row items-center  gap-4 font-semibold">
       <RouterLink to="/StoresView" class="hover:text-b-light-green"><font-awesome-icon :icon="['fas', 'location-dot']" /> Find a Store</RouterLink>
       <RouterLink to="/SignInView" class="border rounded-full px-5 py-2 hover:bg-b-grey">Sign In</RouterLink>
       <RouterLink to="/JoinView" class="border rounded-full px-5 py-2 bg-black text-white hover:opacity-50">Join Now</RouterLink>
