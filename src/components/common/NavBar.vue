@@ -34,12 +34,12 @@ library.add(faLocationDot)
           </g>
         </svg>
       </a>
-      <RouterLink to="/MenuView" class="hover:text-b-light-green">Menu</RouterLink>
-      <RouterLink to="/RewardsView" class="hover:text-b-light-green">Rewards</RouterLink>
-      <RouterLink to="/GiftView" class="hover:text-b-light-green">Gift Cards</RouterLink>
+      <RouterLink to="/MenuView" class="hover:text-b-green">Menu</RouterLink>
+      <RouterLink to="/RewardsView" class="hover:text-b-green">Rewards</RouterLink>
+      <RouterLink to="/GiftView" class="hover:text-b-green">Gift Cards</RouterLink>
     </div>
     <div class="flex flex-col md:flex-row items-center  gap-4 font-semibold">
-      <RouterLink to="/StoresView" class="hover:text-b-light-green"><font-awesome-icon :icon="['fas', 'location-dot']" /> Find a Store</RouterLink>
+      <RouterLink to="/StoresView" class="hover:text-b-green"><font-awesome-icon :icon="['fas', 'location-dot']" /> Find a Store</RouterLink>
       <RouterLink to="/SignInView" class="border rounded-full px-5 py-2 hover:bg-b-grey">Sign In</RouterLink>
       <RouterLink to="/JoinView" class="border rounded-full px-5 py-2 bg-black text-white hover:opacity-50">Join Now</RouterLink>
     </div>
