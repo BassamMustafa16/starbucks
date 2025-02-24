@@ -16,9 +16,9 @@ const showContent = () => {
 </script>
 
 <template>
-  <div class="">
+  <div>
     <button
-      class="flex flex-row items-center justify-between w-full cursor-pointer p-3 font-semibold"
+      class="flex flex-row items-center justify-between w-full cursor-pointer py-3"
       @click.self="showContent()"
     >
       {{ title }}
@@ -45,7 +45,7 @@ const showContent = () => {
       "
     >
       <ul v-if="isExpanded" class="overflow-hidden transition-all duration-300">
-        <li v-for="link in links" class="p-3">
+        <li v-for="link in links" class="py-3">
           <RouterLink to="/" class="block text-gray-600 hover:text-black">
             {{ link }}
           </RouterLink>
