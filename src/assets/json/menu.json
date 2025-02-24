@@ -1,0 +1,36 @@
+{
+  "menuCategories": [
+    {
+      "name": "Drinks",
+      "subCategories": [
+        { "name": "Hot Coffee", "img": "hotCoffee.jpg" },
+        { "name": "Cold Coffee", "img": "coldCoffee.jpg" },
+        { "name": "Hot Tea", "img": "hotTea.jpg" },
+        { "name": "Cold Tea", "img": "coldTea.jpg" },
+        { "name": "Refreshers", "img": "refreshers.jpg" },
+        { "name": "Frappuccino® Blended Beverage", "img": "frappuccino.jpg" },
+        { "name": "Iced Energy", "img": "icedEnergy.jpg" },
+        { "name": "Hot Chocolate, Lemonade & More", "img": "hotChocolate.jpg" },
+        { "name": "Bottled Beverages", "img": "botteledBeverages.jpg" }
+      ]
+    },
+    {
+      "name": "Food",
+      "subCategories": [
+        { "name": "Breakfast", "img": "breakfast.jpg" },
+        { "name": "Bakery", "img": "bakery.jpg" },
+        { "name": "Treats", "img": "treats.jpg" },
+        { "name": "Lunch", "img": "lunch.jpg" },
+        { "name": "Snacks", "img": "snacks.jpg" }
+      ]
+    },
+    {
+      "name": "At Home Coffee",
+      "subCategories": [
+        { "name": "Whole Bean", "img": "wholeBean.jpg" },
+        { "name": "VIA® Instant", "img": "viaInstant.jpg" },
+        { "name": "Shopping Bag", "img": "shoppingBag.jpg" }
+      ]
+    }
+  ]
+}

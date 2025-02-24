@@ -64,7 +64,7 @@ const showContent = () => {
       v-if="isExpanded"
       class="flex flex-col items-center gap-5 p-5 overflow-hidden transition-all duration-300"
     >
-      <RouterLink to="/MenuView" class="hover:text-b-green">Menu</RouterLink>
+      <RouterLink to="/menu" class="hover:text-b-green">Menu</RouterLink>
       <RouterLink to="/RewardsView" class="hover:text-b-green"
         >Rewards</RouterLink
       >
