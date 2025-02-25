@@ -1,9 +1,7 @@
 <script setup>
 import NavBar from "@/components/common/Navs/NavBar.vue";
 import { menuCategories } from "@/assets/json/menu.json";
-
-const resolveImg = (img) =>
-  new URL(`../assets/images/menu/${img}`, import.meta.url).href;
+import Category from "@/components/menuview/Category.vue";
 </script>
 
 <template>
@@ -16,24 +14,16 @@ const resolveImg = (img) =>
       <li><RouterLink to="/">Favorites</RouterLink></li>
     </ul>
   </div>
-
-  <div class="flex flex-col p-5"> 
-    <h1 class="text-2xl font-semibold">Menu</h1>
-    <div v-for="category in menuCategories">
-      <h2 class="text-2xl font-semibold my-5 pb-5 border-b-1 border-gray-500">{{ category.name }}</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div
-          v-for="subcategory in category.subCategories"
-          class="flex flex-row items-center gap-5"
-        >
-          <img
-            class="w-20 h-20 rounded-full"
-            :src="resolveImg(subcategory.img)"
-            :alt="subcategory.img"
-          />
-          <h3>{{ subcategory.name }}</h3>
-        </div>
+  <div class="flex flex-row">
+    <div class="hidden lg:block w-1/4 py-5 px-10">
+      <div v-for="category in menuCategories">
+        <h3>{{category.name}}</h3>
+        <RouterLink v-for="subcategory in category.subCategories" class="block text-gray-500 py-3 hover:text-black">{{ subcategory.name }}</RouterLink>
       </div>
+    </div>
+    <div class="flex flex-col p-5 w-full lg:w-3/4">
+      <h1 class="text-2xl font-semibold">Menu</h1>
+      <Category v-for="category in menuCategories" :category="category" />
     </div>
   </div>
 </template>
