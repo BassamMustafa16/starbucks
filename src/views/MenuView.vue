@@ -1,5 +1,6 @@
 <script setup>
 import NavBar from "@/components/common/Navs/NavBar.vue";
+import BotNav from "@/components/common/Navs/BotNav.vue";
 import { menuCategories } from "@/assets/json/menu.json";
 import Category from "@/components/menuview/Category.vue";
 import { ref, onMounted, onUnmounted } from "vue";
@@ -14,18 +15,7 @@ onMounted(() => {
 
 <template>
   <NavBar />
-  <div class="bg-[#f9f9f9] sticky top-0 bot-nav">
-    <ul class="flex justify-center gap-5 py-3 font-extralight ml-6">
-      <li>
-        <RouterLink to="/menu" class="py-2" active-class="border-b"
-          >Menu</RouterLink
-        >
-      </li>
-      <li><RouterLink to="/">Feature</RouterLink></li>
-      <li><RouterLink to="/">Previous</RouterLink></li>
-      <li><RouterLink to="/">Favorites</RouterLink></li>
-    </ul>
-  </div>
+  <BotNav />
   <div class="flex flex-row">
     <div
       class="hidden lg:block shadow sticky overflow-auto w-1/4 py-5 px-10"
