@@ -35,7 +35,7 @@ library.add(faLocationDot);
           </g>
         </svg>
       </a>
-      <RouterLink to="/menu" class="hover:text-b-green">Menu</RouterLink>
+      <RouterLink to="/menu" class="hover:text-b-green" active-class="border-b-5 border-b-green">Menu</RouterLink>
       <RouterLink to="/RewardsView" class="hover:text-b-green"
         >Rewards</RouterLink
       >
