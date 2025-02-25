@@ -14,10 +14,7 @@ const showContent = () => {
 
 <template>
   <nav class="flex flex-row justify-between items-center py-2 px-6 shadow-md">
-    <a
-      aria-label="Home, Starbucks"
-      class="block"
-      href="https://www.starbucks.com"
+    <RouterLink aria-label="Home, Starbucks" class="block" to="/"
       ><svg
         aria-hidden="true"
         focusable="false"
@@ -37,7 +34,7 @@ const showContent = () => {
           ></path>
         </g>
       </svg>
-    </a>
+    </RouterLink>
     <font-awesome-icon
       @click="showContent"
       class="text-gray-700 cursor-pointer text-xl"

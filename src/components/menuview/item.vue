@@ -1,6 +1,6 @@
 <script setup>
-const props = defineProps(["item"]);
-const { name, img } = props.item;
+const props = defineProps(["subcategory"]);
+const { name, img } = props.subcategory;
 const resolveImg = (img) =>
   new URL(`../../assets/images/menu/${img}`, import.meta.url).href;
 </script>

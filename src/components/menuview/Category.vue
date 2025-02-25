@@ -10,7 +10,7 @@ const {name, subCategories} = props.category;
       {{ name }}
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-      <item v-for="item in subCategories" :item="item" />
+      <item v-for="subcategory in subCategories" :subcategory="subcategory" />
     </div>
   </div>
 </template>
