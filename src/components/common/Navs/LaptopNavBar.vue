@@ -8,13 +8,8 @@ library.add(faLocationDot);
 
 <template>
   <nav class="flex flex-col md:flex-row justify-between py-4 px-6 shadow-md">
-    <div
-      class="flex flex-col md:flex-row items-center gap-4 font-medium mb-4 md:mb-0"
-    >
-      <a
-        aria-label="Home, Starbucks"
-        class="block"
-        href="https://www.starbucks.com"
+    <div class="flex flex-col md:flex-row items-center gap-4 font-medium">
+      <RouterLink aria-label="Home, Starbucks" class="block" to="/"
         ><svg
           aria-hidden="true"
           focusable="false"
@@ -34,11 +29,18 @@ library.add(faLocationDot);
             ></path>
           </g>
         </svg>
-      </a>
-      <RouterLink to="/menu" class="hover:text-b-green" active-class="border-b-5 border-b-green">Menu</RouterLink>
+      </RouterLink>
+      <RouterLink
+        to="/menu"
+        class="hover:text-b-green h-full flex items-center"
+        active-class="border-b-5 border-b-green pt-1"
+        >Menu</RouterLink
+      >
+
       <RouterLink to="/RewardsView" class="hover:text-b-green"
         >Rewards</RouterLink
       >
+
       <RouterLink to="/GiftView" class="hover:text-b-green"
         >Gift Cards</RouterLink
       >
@@ -61,4 +63,3 @@ library.add(faLocationDot);
     </div>
   </nav>
 </template>
-
