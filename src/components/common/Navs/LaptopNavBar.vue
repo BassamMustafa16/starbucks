@@ -37,7 +37,7 @@ library.add(faLocationDot);
         >Menu</RouterLink
       >
 
-      <RouterLink to="/RewardsView" class="hover:text-b-green"
+      <RouterLink to="/Rewards" class="hover:text-b-green"
         >Rewards</RouterLink
       >
 

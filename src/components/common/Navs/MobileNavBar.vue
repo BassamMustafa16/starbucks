@@ -62,7 +62,7 @@ const showContent = () => {
       class="flex flex-col items-center gap-5 p-5 overflow-hidden transition-all duration-300"
     >
       <RouterLink to="/menu" class="hover:text-b-green">Menu</RouterLink>
-      <RouterLink to="/RewardsView" class="hover:text-b-green"
+      <RouterLink to="/Rewards" class="hover:text-b-green"
         >Rewards</RouterLink
       >
       <RouterLink to="/GiftView" class="hover:text-b-green"

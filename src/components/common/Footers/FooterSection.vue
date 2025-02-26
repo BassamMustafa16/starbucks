@@ -2,7 +2,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import FooterDp from "./FooterDp.vue";
 import FooterCols from "./FooterCols.vue";
-
+import { useResponsive } from "@/composables/useResponsive";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faSpotify,
@@ -76,7 +76,7 @@ const DropdownMenus = [
     ],
   },
 ];
-const socilaMediaIcons = [
+const socialMediaIcons = [
   {
     icon: ["fab", "spotify"],
     link: "#",
@@ -111,16 +111,8 @@ const attachments = [
   "Accessibility",
   "Cookie Preferences",
 ];
-const isMobile = ref(window.innerWidth < 1024);
-const updateScreenWidth = () => {
-  isMobile.value = window.innerWidth < 1024;
-};
-onMounted(() => {
-  window.addEventListener("resize", updateScreenWidth);
-});
-onUnmounted(() => {
-  window.removeEventListener("resize", updateScreenWidth);
-});
+
+const { isMobile } = useResponsive();
 </script>
 
 <template>
@@ -144,7 +136,7 @@ onUnmounted(() => {
     <div class="flex flex-col gap-5 mt-5">
       <div class="flex justify-center items-center space-x-4 text-2xl md:text-3xl">
         <a
-          v-for="item in socilaMediaIcons"
+          v-for="item in socialMediaIcons"
           :href="item.link"
           class="w-10 md:w-15 h-10 md:h-15 flex justify-center items-center rounded-full bg-white text-black hover:bg-[#E9E9E9] transition-all duration-300"
         >
