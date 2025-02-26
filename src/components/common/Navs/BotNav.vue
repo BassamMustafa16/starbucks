@@ -13,7 +13,11 @@
           >Feature</RouterLink
         >
       </li>
-      <li><RouterLink to="/">Previous</RouterLink></li>
+      <li>
+        <RouterLink to="/menu/previous" class="py-2" active-class="border-b"
+          >Previous</RouterLink
+        >
+      </li>
       <li><RouterLink to="/">Favorites</RouterLink></li>
     </ul>
   </div>

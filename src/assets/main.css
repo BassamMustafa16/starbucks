@@ -26,7 +26,7 @@
     font-size: var(--text-xl);
   }
   p {
-    font-size: var(--text-l);
+    font-size: var(--text-md);
   }
 }
 

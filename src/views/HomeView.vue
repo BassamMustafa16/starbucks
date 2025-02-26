@@ -8,6 +8,7 @@ import FooterSection from "@/components/common/Footers/FooterSection.vue";
 </script>
 
 <template>
+  
   <NavBar />
   <main class="flex flex-col items-center gap-10">
     <HomeSection1 />

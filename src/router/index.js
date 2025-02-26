@@ -16,7 +16,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/MenuView.vue'),
+      component: () => import('../views/menu/MenuView.vue'),
     },
     {
       path: '/menu/featured',
@@ -24,7 +24,15 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/FeaturedView.vue'),
+      component: () => import('../views/menu/FeaturedView.vue'),
+    },
+    {
+      path: '/menu/previous',
+      name: 'previous',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/menu/PreviousView.vue'),
     },
   ],
 })
