@@ -160,5 +160,6 @@ onUnmounted(() => {
         >
       </div>
     </div>
+    <p class="text-gray-600 mt-10">© 2025 Starbucks Coffee Company. All rights reserved.</p>
   </footer>
 </template>

@@ -13,26 +13,22 @@ const router = createRouter({
     {
       path: '/menu',
       name: 'menu',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/menu/MenuView.vue'),
     },
     {
       path: '/menu/featured',
       name: 'featured',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/menu/FeaturedView.vue'),
     },
     {
       path: '/menu/previous',
       name: 'previous',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/menu/PreviousView.vue'),
+    },
+    {
+      path: '/menu/favorites',
+      name: 'favorites',
+      component: () => import('../views/menu/FavoritesView.vue'),
     },
   ],
 })

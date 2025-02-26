@@ -9,7 +9,7 @@ library.add(faLocationDot);
 <template>
   <nav class="flex flex-col md:flex-row justify-between py-4 px-6 shadow-md">
     <div class="flex flex-col md:flex-row items-center gap-4 font-medium">
-      <RouterLink aria-label="Home, Starbucks" class="block" to="/"
+      <RouterLink aria-label="Home, Starbucks" to="/"
         ><svg
           aria-hidden="true"
           focusable="false"
