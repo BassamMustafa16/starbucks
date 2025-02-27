@@ -3,8 +3,15 @@ import NavBar from "@/components/common/Navs/NavBar.vue";
 import FooterSection from "@/components/common/Footers/FooterSection.vue";
 
 import { useResponsive } from "@/composables/useResponsive";
+import { computed } from "vue";
 
 const { isMobile } = useResponsive(768);
+
+const heroUrl = computed(() => {
+  return isMobile.value
+    ? new URL('@/assets/images/rewards/hero-mobile.jpg', import.meta.url).href
+    : new URL('@/assets/images/rewards/hero-desktop.png', import.meta.url).href;
+});
 </script>
 
 <template>
@@ -18,7 +25,7 @@ const { isMobile } = useResponsive(768);
     </button>
   </div>
   <div class="relative z-[-1] bg-[#D4E9E2]">
-    <img class="h-full" :src="`src/assets/images/rewards/${isMobile ? 'hero-mobile.jpg' : 'hero-desktop.png'}`" >
+    <img class="h-full" :src="heroUrl" :alt="heroUrl" >
     <div class="absolute flex flex-col gap-5 md:ml-10 max-md:w-full max-md:items-center md:w-1/3 top-10">
       <h2 class="font-semibold lg:text-4xl">FREE COFFEE<br>IS A TAP AWAY</h2>
       <p class="lg:text-2xl">Join now to start earning Rewards.</p>
