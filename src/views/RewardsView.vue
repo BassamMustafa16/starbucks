@@ -3,7 +3,7 @@ import NavBar from "@/components/common/Navs/NavBar.vue";
 import FooterSection from "@/components/common/Footers/FooterSection.vue";
 
 import { useResponsive } from "@/composables/useResponsive";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 
 const { isMobile } = useResponsive(768);
 
@@ -12,6 +12,7 @@ const heroUrl = computed(() => {
     ? new URL('@/assets/images/rewards/hero-mobile.jpg', import.meta.url).href
     : new URL('@/assets/images/rewards/hero-desktop.png', import.meta.url).href;
 });
+
 </script>
 
 <template>
@@ -32,7 +33,7 @@ const heroUrl = computed(() => {
       <button class="cursor-pointer lg:text-2xl border rounded-full py-2 px-5 text-white bg-[#00754A] hover:bg-[#158159]">
       {{ isMobile ? 'Join in the app' : 'Join Now'}}
     </button>
-    <RouterLink  class="underline hover:no-underline lg:text-xl">{{ isMobile ? 'Or join online' : 'Or join in the app for the best experience'}}</RouterLink>
+    <RouterLink  class="underline hover:no-underline lg:text-xl" to="/">{{ isMobile ? 'Or join online' : 'Or join in the app for the best experience'}}</RouterLink>
     </div>
   </div>
   <FooterSection />
