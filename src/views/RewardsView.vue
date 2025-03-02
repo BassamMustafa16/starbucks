@@ -4,6 +4,7 @@ import Banner from "@/components/rewardsview/Banner.vue";
 import HeroSection from "@/components/rewardsview/HeroSection.vue";
 import GettingStarted from "@/components/rewardsview/GettingStarted.vue";
 import GetFavorites from "@/components/rewardsview/GetFavorites.vue";
+import Extras from "@/components/rewardsview/Extras.vue";
 import FooterSection from "@/components/common/Footers/FooterSection.vue";
 
 import { useResponsive } from "@/composables/useResponsive";
@@ -18,5 +19,6 @@ const { isMobile } = useResponsive(768);
   <HeroSection :isMobile="isMobile" />
   <GettingStarted :isMobile="isMobile" />
   <GetFavorites />
+  <Extras />
   <FooterSection />
 </template>

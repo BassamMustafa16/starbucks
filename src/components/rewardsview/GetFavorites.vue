@@ -63,6 +63,7 @@ const changeActive = (index) => {
 // Ensure the underline is positioned correctly after mount
 onMounted(() => {
   nextTick(updateUnderline);
+  window.addEventListener('resize', updateUnderline);
 });
 </script>
 
