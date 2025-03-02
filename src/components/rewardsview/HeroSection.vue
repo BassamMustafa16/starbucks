@@ -11,25 +11,29 @@ const heroUrl = computed(() => {
 <template>
   <div class="relative bg-[#D4E9E2]">
     <!--Image-->
-    <div class="">
-      <img class="h-full" :src="heroUrl" :alt="heroUrl" />
-    </div>
-    <!--Text Content-->
     <div
-      class="absolute flex flex-col gap-5 md:ml-10 max-md:w-full max-md:items-center md:w-1/3 top-10"
+      class="relative bg-cover bg-right-bottom"
+      :style="{ backgroundImage: `url(${heroUrl})` }"
     >
-      <h2 class="font-semibold lg:text-4xl">FREE COFFEE<br />IS A TAP AWAY</h2>
-      <p class="lg:text-2xl">Join now to start earning Rewards.</p>
-      <button
-        class="cursor-pointer lg:text-2xl border rounded-full py-2 px-5 text-white bg-[#00754A] hover:bg-[#158159]"
+      <!--Text Content-->
+      <div
+        class="flex flex-col gap-5 py-30 md:pd-10 md:ml-10 max-md:w-full max-md:items-center md:w-1/3"
       >
-        {{ isMobile ? "Join in the app" : "Join Now" }}
-      </button>
-      <RouterLink class="underline hover:no-underline lg:text-xl" to="/">{{
-        isMobile
-          ? "Or join online"
-          : "Or join in the app for the best experience"
-      }}</RouterLink>
+        <h2 class="font-semibold lg:text-4xl">
+          FREE COFFEE<br />IS A TAP AWAY
+        </h2>
+        <p class="lg:text-2xl">Join now to start earning Rewards.</p>
+        <button
+          class="cursor-pointer lg:text-2xl border rounded-full py-2 px-5 text-white bg-[#00754A] hover:bg-[#158159]"
+        >
+          {{ isMobile ? "Join in the app" : "Join Now" }}
+        </button>
+        <RouterLink class="underline hover:no-underline lg:text-xl" to="/">{{
+          isMobile
+            ? "Or join online"
+            : "Or join in the app for the best experience"
+        }}</RouterLink>
+      </div>
     </div>
   </div>
 </template>
