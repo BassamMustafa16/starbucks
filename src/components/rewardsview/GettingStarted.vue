@@ -2,18 +2,23 @@
 const props = defineProps(["isMobile"]);
 </script>
 <template>
+  
   <div class="mt-10 px-5 text-center flex flex-col gap-10">
+    <!--Heading-->
     <div>
       <h2 class="font-semibold mb-5">Getting started is easy</h2>
       <p>Earn Stars and get rewarded in a few easy steps.</p>
     </div>
+    <!--Numeric List-->
     <ul class="flex flex-col md:flex-row gap-10">
       <li class="flex flex-row md:flex-col md:items-center items-start gap-5">
+        <!--Number---->
         <h3
           class="flex items-center justify-center text-[#00754a] border-2 rounded-full text-center aspect-square w-13 font-semibold shrink-0"
         >
           1
         </h3>
+        <!--Text Content-->
         <div class="flex flex-col gap-3">
           <p class="text-left md:text-center font-semibold">
             {{ isMobile ? "Download the Starbucks® app" : "Create an account" }}

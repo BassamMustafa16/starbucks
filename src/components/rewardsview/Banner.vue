@@ -4,7 +4,7 @@ const props = defineProps(["isMobile"]);
 
 <template>
   <div
-    class="sticky top-0 flex flex-row justify-between text-sm text-white bg-b-dark-green font-semibold py-3 px-5 md:px-10"
+    class="sticky top-0 flex flex-row justify-between text-sm text-white bg-b-dark-green font-semibold py-3 px-5 md:px-10 z-10"
   >
     <p class="">
       Starbucks® <br v-if="isMobile" />

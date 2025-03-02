@@ -6,7 +6,7 @@ const props = defineProps(['title', 'links']);
 
 <template>
   <div>
-    <h2 class="text-l font-medium mb-5">{{ title }}</h2>
+    <h3 class="text-l font-medium mb-5">{{ title }}</h3>
     <ul>
       <li v-for="link in links" class="py-3">
           <RouterLink to="/" class="block text-gray-600 hover:text-black">
