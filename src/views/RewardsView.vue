@@ -10,11 +10,10 @@ import { useResponsive } from "@/composables/useResponsive";
 
 const { isMobile } = useResponsive(768);
 
-
 </script>
 
 <template>
-  <NavBar />
+  <NavBar/>
   <Banner :isMobile="isMobile" />
   <HeroSection :isMobile="isMobile" />
   <GettingStarted :isMobile="isMobile" />

@@ -9,8 +9,12 @@ const heroUrl = computed(() => {
 </script>
 
 <template>
-  <div class="relative z-[-1] bg-[#D4E9E2]">
-    <img class="h-full" :src="heroUrl" :alt="heroUrl" />
+  <div class="relative bg-[#D4E9E2]">
+    <!--Image-->
+    <div class="">
+      <img class="h-full" :src="heroUrl" :alt="heroUrl" />
+    </div>
+    <!--Text Content-->
     <div
       class="absolute flex flex-col gap-5 md:ml-10 max-md:w-full max-md:items-center md:w-1/3 top-10"
     >

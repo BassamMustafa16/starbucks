@@ -8,32 +8,32 @@ const underlineWidth = ref(0);
 const rewards = ref([
   // rewards data
   {
-    img: "../../assets/images/rewards/25.png",
+    img: "25.png",
     title: "Customize your drink",
     description:
       "Make your drink just right with an extra espresso shot or a dash of your favorite syrup.",
   },
   {
-    img: "../../assets/images/rewards/100.png",
+    img: "100.png",
     title:
       "Brewed hot or iced coffee or tea, bakery item, packaged snack and more",
     description:
       "Treat yourself to an iced coffee, buttery croissant, bag of chips and more.",
   },
   {
-    img: "../../assets/images/rewards/200.png",
+    img: "200.png",
     title: "Handcrafted drink (Cold Brew, lattes and more) or hot breakfast",
     description:
       "Turn good mornings great with a delicious handcrafted drink of your choice, breakfast sandwich or oatmeal on us.",
   },
   {
-    img: "../../assets/images/rewards/300.png",
+    img: "300.png",
     title: "Sandwich, protein box or at-home coffee",
     description:
       "Enjoy a PM pick-me-up with a lunch sandwich, protein box or a bag of coffee—including Starbucks VIA Instant®.",
   },
   {
-    img: "../../assets/images/rewards/400.png",
+    img: "400.png",
     title: "Select Starbucks® merchandise",
     description:
       "Take home a signature cup, drink tumbler or your choice of coffee merch up to $20.",
@@ -42,7 +42,7 @@ const rewards = ref([
 
 // Function to resolve image path
 const resolveImage = (img) => {
-  return new URL(img, import.meta.url).href;
+  return new URL(`../../assets/images/rewards/${img}`, import.meta.url).href;
 };
 
 // Function to update the underline position

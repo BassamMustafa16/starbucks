@@ -3,7 +3,7 @@ const props = defineProps(["isMobile"]);
 </script>
 <template>
   
-  <div class="mt-10 px-5 text-center flex flex-col gap-10">
+  <div class="mt-10 px-10 text-center flex flex-col gap-10">
     <!--Heading-->
     <div>
       <h2 class="font-semibold mb-5">Getting started is easy</h2>
