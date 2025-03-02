@@ -39,10 +39,10 @@ onMounted(() => {
       class="flex justify-center border-b-2 border-gray-300 relative"
     >
       <li
-        v-for="(points, index) in [25, 100, 150, 200]"
+        v-for="(points, index) in [25, 100, 200, 300, 400]"
         :key="index"
         ref="listItems"
-        class="py-4 px-3 text-lg font-semibold cursor-pointer transition-all duration-300"
+        class="py-4 px-2 text-lg font-semibold cursor-pointer transition-all duration-300"
         :class="activeItem === index ? 'text-black' : 'text-gray-500'"
         @click="changeActive(index)"
       >
