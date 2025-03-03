@@ -1,7 +1,7 @@
 <script setup>
 const data = [
   {
-    title: "1★Star per dollar",
+    title: "1★ Star per dollar",
     description: "Pay as you go",
     contents: [
       {
@@ -18,7 +18,7 @@ const data = [
     ],
   },
   {
-    title: "2★Stars per dollar",
+    title: "2★ Stars per dollar",
     description: "Add funds in the app",
     contents: [
       {

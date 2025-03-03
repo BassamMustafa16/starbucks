@@ -6,6 +6,7 @@ import GettingStarted from "@/components/rewardsview/GettingStarted.vue";
 import GetFavorites from "@/components/rewardsview/GetFavorites.vue";
 import Extras from "@/components/rewardsview/Extras.vue";
 import EarningStarsView from "@/components/rewardsview/EarningStarsView.vue";
+import KeepRewards from "@/components/rewardsview/KeepRewards.vue";
 import FooterSection from "@/components/common/Footers/FooterSection.vue";
 
 
@@ -23,5 +24,6 @@ const { isMobile } = useResponsive(768);
   <GetFavorites />
   <Extras />
   <EarningStarsView />
+  <KeepRewards />
   <FooterSection />
 </template>
