@@ -40,7 +40,7 @@ library.add(faLocationDot);
         >Rewards</RouterLink
       >
 
-      <RouterLink to="/GiftView" class="hover:text-b-green"
+      <RouterLink to="/gift" class="hover:text-b-green"
         >Gift Cards</RouterLink
       >
     </div>
