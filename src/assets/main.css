@@ -25,6 +25,9 @@
   h3{
     font-size: var(--text-xl);
   }
+  h4{
+    font-size: var(--text-lg);
+  }
   p {
     font-size: var(--text-base);
   }
@@ -43,8 +46,11 @@
     h3{
       font-size: var(--text-2xl);
     }
+    h4{
+      font-size: var(--text-base);
+    }
     p {
-      font-size: var(--text-lg);
+      font-size: var(--text-base);
     }
   }
   

@@ -10,8 +10,8 @@ const props = defineProps(["isMobile"]);
       <p>Earn Stars and get rewarded in a few easy steps.</p>
     </div>
     <!--Numeric List-->
-    <ul class="flex flex-col md:flex-row gap-10">
-      <li class="flex flex-row md:flex-col md:items-center items-start gap-5">
+    <ul class="flex flex-col justify-center md:flex-row gap-10">
+      <li class="flex flex-row md:flex-col md:items-center items-start gap-5 max-w-100">
         <!--Number---->
         <h3
           class="flex items-center justify-center text-[#00754a] border-2 rounded-full text-center aspect-square w-13 font-semibold shrink-0"
@@ -45,7 +45,7 @@ const props = defineProps(["isMobile"]);
           </p>
         </div>
       </li>
-      <li class="flex flex-row md:flex-col md:items-center items-start gap-5">
+      <li class="flex flex-row md:flex-col md:items-center items-start gap-5 max-w-100">
         <h3
           class="flex items-center justify-center text-[#00754a] border-2 rounded-full text-center aspect-square w-13 font-semibold shrink-0"
         >
@@ -64,7 +64,7 @@ const props = defineProps(["isMobile"]);
           </p>
         </div>
       </li>
-      <li class="flex flex-row md:flex-col md:items-center items-start gap-5">
+      <li class="flex flex-row md:flex-col md:items-center items-start gap-5 max-w-100">
         <h3
           class="flex items-center justify-center text-[#00754a] border-2 rounded-full text-center aspect-square w-13 font-semibold shrink-0"
         >

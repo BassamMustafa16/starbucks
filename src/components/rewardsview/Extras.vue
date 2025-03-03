@@ -26,7 +26,7 @@ const resolveImg = (img) => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-10 px-5 items-center mt-20 text-center">
+  <div class="flex flex-col gap-10 px-5 md:px-10 items-center mt-20 text-center">
     <div class="flex flex-col gap-5 max-w-150">
       <h2 class="font-semibold">Endless Extras</h2>
       <p>
@@ -37,7 +37,7 @@ const resolveImg = (img) => {
     <div class="flex flex-col md:flex-row gap-10">
       <div
         v-for="item in data"
-        class="flex flex-row md:flex-col md:text-center gap-5 text-left items-start md:items-center max-w-100"
+        class="flex flex-row md:flex-col md:text-center gap-5 text-left items-start md:items-center max-w-100 flex-1"
       >
       <!--Image-->
         <RouterLink to="/">
@@ -47,8 +47,8 @@ const resolveImg = (img) => {
         </RouterLink>
         <!--Text Content-->
         <div class="flex flex-col gap-5">
-          <p class="font-semibold lg:text-2xl">{{ item.title }}</p>
-          <p class="text-sm lg:text-xl">
+          <p class="font-semibold">{{ item.title }}</p>
+          <p class="">
             {{ item.description }}
           </p>
           <RouterLink to="/" class="text-[#006241] underline underline-offset-2"
