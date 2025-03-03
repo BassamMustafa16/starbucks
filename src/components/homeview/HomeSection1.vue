@@ -7,7 +7,7 @@
       <h1 class="text-center mt-10 md:w-3/4 lg:text-5xl">
         More reasons to stay awhile
       </h1>
-      <p class="text-center md:w-3/4 md:text-xl lg:text-xl">
+      <p class="text-center md:w-3/4 lg:text-xl">
         Mugs, glasses and the condiment bar are back and all for-here orders
         include freshly brewed refills on coffee and tea.
       </p>

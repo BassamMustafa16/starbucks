@@ -51,7 +51,7 @@ const resolveImage = (img) => {
       No matter how you pay, you can earn Stars with your morning coffee. Those
       Stars add up to (really delicious) Rewards.
     </p>
-    <ul class="flex flex-col text-left gap-10 mt-10">
+    <ul class="flex flex-col text-left gap-10 mt-10 max-w-300">
       <li
         v-for="item in data"
         class="flex flex-col lg:flex-row lg:items-center pb-10 first:border-b border-gray-300"

@@ -9,19 +9,19 @@ const data = [
     img: "delta-skymiles.png",
     anchor: "Link your Delta SkyMiles®",
     href: "https://www.deltastarbucks.com/content/starbucks/en/overview.html?mkcpgn=dipd-sbux7042",
-    text: " and Starbucks® Rewards accounts to earn miles on Starbucks Card     reloads of $25 or more, plus Double Stars on travel days.1",
+    text: " and Starbucks® Rewards accounts to earn miles on Starbucks Card     reloads of $25 or more, plus Double Stars on travel days.",
   },
   {
     img: "bank-of-america.png",
     anchor: "Link your Bank of America",
     href: "https://promotions.bankofamerica.com/starbucks?cm_mmc=ESZ-EnterpriseSales-_-Cobrand_Site-_-ES35LT0004_StarbucksRewardsModuleBofA_SRModuleBofA-_-StarbucksPartnerMktg",
-    text: "eligible card and Starbucks® Rewards account to earn 2% Cash Back and Bonus Stars on qualifying Starbucks in-app purchases.2",
+    text: "eligible card and Starbucks® Rewards account to earn 2% Cash Back and Bonus Stars on qualifying Starbucks in-app purchases.",
   },
   {
     img: "marriott-logo.png",
     anchor: "Link your Marriott Bonvoy®",
     href: "https://www.starbucks.com/rewards/partnerships/marriottbonvoy",
-    text: "and Starbucks® Rewards accounts to earn Double Stars during eligible stays, points during any Marriott Bonvoy Week and more.3",
+    text: "and Starbucks® Rewards accounts to earn Double Stars during eligible stays, points during any Marriott Bonvoy Week and more.",
   },
 ];
 
@@ -45,7 +45,7 @@ const resolveImage = (img) => {
       </p>
       <ul class="flex flex-col md:flex-row text-left gap-10 mt-10">
         <li
-          v-for="item in data"
+          v-for="(item, index) in data"
           class="flex flex-row md:flex-col items-center gap-5"
         >
           <img
@@ -66,7 +66,7 @@ const resolveImage = (img) => {
             /></a>
 
             <p class="text-sm lg:text-base">
-              {{ item.text }}
+              {{ item.text }}<sup>{{ index + 1 }}</sup>
             </p>
           </div>
         </li>
