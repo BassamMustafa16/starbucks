@@ -37,9 +37,9 @@ const onSlideChange = () => {
 <template>
   <div class="w-full flex flex-col gap-3 justify-center px-[8.333vw]">
     <!--Heaading-->
-    <div class="flex flex-row justify-between items-center">
-      <p class=" text-sm">{{ props.title }}</p>
-      <RouterLink v-if="!isAllVisible" to="/" class="text-[#00754a]"
+    <div class="flex flex-row justify-between gap-5 items-center">
+      <p class="text-sm font-semibold tracking-wider">{{ props.title }}</p>
+      <RouterLink v-if="!isAllVisible" to="/" class="text-[#00754a] whitespace-nowrap"
         >See all</RouterLink
       >
     </div>

@@ -6,7 +6,7 @@ library.add(faArrowUpRightFromSquare);
 </script>
 
 <template>
-  <div class="flex flex-col mt-10">
+  <div class="flex flex-col">
     <div
       class="bg-[#F9F9F9] flex flex-col px-[8.333vw] md:flex-row gap-5 md:gap-10 py-10 items-center"
     >

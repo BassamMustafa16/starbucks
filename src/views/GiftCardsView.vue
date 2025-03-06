@@ -11,8 +11,7 @@ import FooterSection from "@/components/common/Footers/FooterSection.vue";
 
 <template>
   <NavBar />
-  <main class="flex flex-col gap-5 my-10">
-    <h2 class="font-semibold px-[8.333vw]">Gift Cards</h2>
+  <main class="flex flex-col gap-10 my-10">
     <Section1 />
     <Section2 />
     <Section3 />
