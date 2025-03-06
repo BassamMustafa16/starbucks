@@ -36,11 +36,17 @@ library.add(faLocationDot);
         >Menu</RouterLink
       >
 
-      <RouterLink to="/Rewards" class="hover:text-b-green"
+      <RouterLink
+        to="/Rewards"
+        class="hover:text-b-green h-full flex items-center"
+        active-class="border-b-5 border-b-green pt-1"
         >Rewards</RouterLink
       >
 
-      <RouterLink to="/gift" class="hover:text-b-green"
+      <RouterLink
+        to="/gift"
+        class="hover:text-b-green h-full flex items-center"
+        active-class="border-b-5 border-b-green pt-1"
         >Gift Cards</RouterLink
       >
     </div>

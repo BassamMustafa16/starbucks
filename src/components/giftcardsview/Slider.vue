@@ -39,7 +39,10 @@ const onSlideChange = () => {
     <!--Heaading-->
     <div class="flex flex-row justify-between gap-5 items-center">
       <p class="text-sm font-semibold tracking-wider">{{ props.title }}</p>
-      <RouterLink v-if="!isAllVisible" to="/" class="text-[#00754a] whitespace-nowrap"
+      <RouterLink
+        v-if="!isAllVisible"
+        to="/"
+        class="text-[#00754a] whitespace-nowrap"
         >See all</RouterLink
       >
     </div>
@@ -62,13 +65,17 @@ const onSlideChange = () => {
     >
       <swiper-slide class="" v-for="(card, index) in cards" :key="index">
         <div
-          class="relative cursor-pointer transition-transform duration-500 ease-in-out md:hover:translate-y-[-10px] md:mt-2.5"
+          class="relative transition-transform duration-500 ease-in-out md:hover:translate-y-[-10px] md:mt-2.5"
         >
-          <img
-            :src="resolveImage(card)"
-            :alt="card"
-            class="rounded-lg shadow-lg"
-          />
+          <RouterLink
+            :to="{ path: 'gift/create-egift', query: { card: card } }"
+          >
+            <img
+              :src="resolveImage(card)"
+              :alt="card"
+              class="rounded-lg shadow-lg"
+            />
+          </RouterLink>
         </div>
       </swiper-slide>
     </swiper>

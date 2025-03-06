@@ -38,7 +38,12 @@ const router = createRouter({
     {
       path: '/gift',
       name: 'gift',
-      component: () => import('../views/GiftCardsView.vue'),
+      component: () => import('../views/Gifts/GiftCardsView.vue'),
+    },
+    {
+      path: '/gift/create-egift',
+      name: 'createGift',
+      component: () => import('../views/Gifts/CreateGift.vue'),
     },
   ],
 })
