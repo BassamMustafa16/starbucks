@@ -79,7 +79,7 @@ const onSlideChange = () => {
 /* Custom navigation button styles */
 .swiper-button-next,
 .swiper-button-prev {
-  background-color: rgba(255, 255, 255, 0.5); /* Background color */
+  background-color: rgba(255, 255, 255, 0.9); /* Background color */
   border-radius: 50%; /* Make it circular */
   width: 40px;
   height: 40px;
@@ -94,7 +94,7 @@ const onSlideChange = () => {
 .swiper-button-prev::after {
   font-size: 10px;
   font-weight: bold;
-  color: rgb(85, 85, 85);
+  color: rgb(20, 20, 20);
 }
 
 .swiper-button-next,
