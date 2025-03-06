@@ -5,48 +5,44 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
-const cards = ref([
-  {
-    img: "card1.png",
-    title: "Happy Birthday",
-  },
-  {
-    img: "card2.png",
-    title: "Thank You",
-  },
-  {
-    img: "card3.png",
-    title: "Congrats",
-  },
-  {
-    img: "card4.png",
-    title: "Holiday Special",
-  },
-  {
-    img: "card5.png",
-    title: "Holiday Special",
-  },
-  {
-    img: "card6.png",
-    title: "Holiday Special",
-  },
-  {
-    img: "card7.png",
-    title: "Holiday Special",
-  },
-  {
-    img: "card8.jpg",
-    title: "Holiday Special",
-  },
-]);
+const props = defineProps(["images", "title"]);
+const cards = props.images;
 
 const resolveImage = (img) => {
   return new URL(`../../assets/images/gift/${img}`, import.meta.url).href;
 };
+
+const isAllVisible = ref(false);
+const swiperInstance = ref(null);
+
+const checkVisibility = () => {
+  if (swiperInstance.value) {
+    const totalSlides = swiperInstance.value.slides.length;
+    const visibleSlides = swiperInstance.value.params.slidesPerView;
+
+    isAllVisible.value = totalSlides <= visibleSlides;
+  }
+};
+
+const onSwiperInit = (swiper) => {
+  swiperInstance.value = swiper;
+  checkVisibility();
+};
+
+const onSlideChange = () => {
+  checkVisibility();
+};
 </script>
 
 <template>
-  <div class="w-full flex justify-center">
+  <div class="w-full flex flex-col gap-3 justify-center px-[8.333vw]">
+    <!--Heaading-->
+    <div class="flex flex-row justify-between items-center">
+      <p class=" text-sm">{{ props.title }}</p>
+      <RouterLink v-if="!isAllVisible" to="/" class="text-[#00754a]"
+        >See all</RouterLink
+      >
+    </div>
     <swiper
       :modules="[Navigation]"
       :space-between="20"
@@ -59,15 +55,18 @@ const resolveImage = (img) => {
       :navigation="{
         disabledClass: 'swiper-button-hidden', // Use this to hide buttons
       }"
-      class="w-full overflow-y-visible!"
+      class="w-full"
+      @swiper="onSwiperInit"
+      @slideChange="onSlideChange"
+      @breakpoint="checkVisibility"
     >
       <swiper-slide class="" v-for="(card, index) in cards" :key="index">
         <div
-          class="relative cursor-pointer transition-transform duration-500 ease-in-out hover:translate-y-[-10px]"
+          class="relative cursor-pointer transition-transform duration-500 ease-in-out md:hover:translate-y-[-10px] md:mt-2.5"
         >
           <img
-            :src="resolveImage(card.img)"
-            :alt="card.title"
+            :src="resolveImage(card)"
+            :alt="card"
             class="rounded-lg shadow-lg"
           />
         </div>
@@ -102,18 +101,5 @@ const resolveImage = (img) => {
 .swiper-button-prev {
   width: 40px;
   aspect-ratio: 1;
-}
-
-/* Hover effect */
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-}
-
-.test-hover {
-  transition: transform 0.5s ease-in-out;
-}
-
-.test-hover:hover {
-  transform: translateY(-10px);
 }
 </style>
