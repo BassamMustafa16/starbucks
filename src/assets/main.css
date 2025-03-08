@@ -1,17 +1,18 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
-  font-family: SoDoSans,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: SoDoSans, Helvetica Neue, Helvetica, Arial, sans-serif;
   box-sizing: border-box;
 }
 
 @theme {
-  --color-b-dark-green: #1E3932;
-  --color-b-green: #32472F;
-  --color-b-light-green: #D6DDC7;
+  --color-b-dark-green: #1e3932;
+  --color-b-green: #32472f;
+  --color-b-light-green: #d6ddc7;
   --color-b-grey: #f3f1e7;
-
-
 }
 
 @layer base {
@@ -19,13 +20,13 @@
     font-size: var(--text-4xl);
     line-height: 1.1;
   }
-  h2{
+  h2 {
     font-size: var(--text-2xl);
   }
-  h3{
+  h3 {
     font-size: var(--text-xl);
   }
-  h4{
+  h4 {
     font-size: var(--text-lg);
   }
   p {
@@ -33,27 +34,46 @@
   }
 }
 
-
 @media screen and (min-width: 1024px) {
   @layer base {
     h1 {
       font-size: var(--text-5xl);
       line-height: 1.1;
     }
-    h2{
+    h2 {
       font-size: var(--text-3xl);
     }
-    h3{
+    h3 {
       font-size: var(--text-2xl);
     }
-    h4{
+    h4 {
       font-size: var(--text-base);
     }
     p {
       font-size: var(--text-base);
     }
   }
-  
 }
 
+@layer components {
+  .custom-invalid-input {
+    @apply invalid:border-red-500;
+  }
 
+  .custom-input {
+    @apply w-full py-3 px-5 md:text-lg outline-none focus:border-[#00754a] 
+            border border-[#767676] rounded-xl;
+  }
+  .custom-invalid-label {
+    @apply peer-invalid:text-red-500;
+  }
+  .custom-label {
+    @apply peer-focus:text-[#00754A] 
+            cursor-text text-[#00000094] 
+           absolute left-2 bg-white px-1 transition-all duration-300;
+  }
+
+  .error-message {
+    @apply text-red-500 text-xs md:text-sm mt-2 px-5 invisible group-has-focus:invisible group-has-invalid:visible;
+  }
+}

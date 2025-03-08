@@ -11,6 +11,8 @@ library.add(faGreaterThan, faCircleXmark);
 const dpValue = ref(25);
 const isCustomAmount = ref(false);
 const giftAmount = ref(25);
+const emit = defineEmits(["giftAmount"]);
+emit("giftAmount", giftAmount.value);
 const customInputRef = ref(null); // Reference for custom input field
 watch(dpValue, async (newValue) => {
   if (newValue === "Custom amount") {
@@ -23,13 +25,10 @@ watch(dpValue, async (newValue) => {
     giftAmount.value = newValue;
   }
 });
-watch(giftAmount, (newValue) => {
-  console.log(newValue);
-});
 
-const afterLeave = (el) => {
-  el.style.display = "none";
-};
+watch(giftAmount, (newValue) => {
+  emit("giftAmount", newValue);
+});
 </script>
 
 <template>
@@ -89,12 +88,12 @@ const afterLeave = (el) => {
             max="100"
             step="1"
             ref="customInputRef"
-            class="peer w-full py-3 px-5 md:text-lg outline-none focus:border-[#00754a] invalid:border-red-500 border border-[#767676] rounded-xl"
+            class="peer custom-invalid-input custom-input"
             required
           />
           <label
             :class="[
-              'peer-focus:text-[#00754A] peer-invalid:text-red-500 peer-focus:top-0 peer-focus:md:text-sm peer-focus:text-xs cursor-text text-[#00000094] absolute left-2 -translate-y-1/2 bg-white px-1 transition-all duration-300',
+              'custom-label custom-invalid-label peer-focus:md:text-sm peer-focus:text-xs peer-focus:top-0 -translate-y-1/2',
               giftAmount === ''
                 ? ['top-1/2', 'md:text-lg']
                 : ['top-0', 'md:text-sm', 'text-xs'],
@@ -103,9 +102,7 @@ const afterLeave = (el) => {
             >* Enter custom dollar amount</label
           >
         </div>
-        <p
-          class="text-red-500 text-xs md:text-sm mt-2 px-5 invisible group-has-focus:invisible group-has-invalid:visible"
-        >
+        <p class="error-message">
           <font-awesome-icon :icon="['fas', 'circle-xmark']" class="" />
           Please enter a whole amount between $5 and $100
         </p>
