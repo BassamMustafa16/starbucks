@@ -44,8 +44,10 @@ const validateData = () => {
   recipients.value.forEach((recipient) => {
     if (!recipient.name || !recipient.email) {
       errors.value.push("Please fill in all recipient's name and email");
+      return;
     } else if (!recipient.valid) {
       errors.value.push("Please enter a valid recipient email address");
+      return;
     }
   });
 
@@ -79,7 +81,7 @@ const showData = () => {
     <NoteSection @personalNote="(data) => (note = data)" />
     <SenderSection @sender="(data) => (sender = data)" />
     <button
-      class="fixed bg-[#00754a] py-2 lg:py-3 px-6 lg:px-10 text-white rounded-full text-lg md:text-2xl shadow-lg shadow-gray-500 bottom-10 right-5 z-20 transition-all duration-300 ease-in-out active:scale-95"
+      class="fixed bg-[#00754a] cursor-pointer py-2 lg:py-3 px-6 lg:px-10 text-white rounded-full text-lg md:text-2xl shadow-lg shadow-gray-500 bottom-10 right-5 z-20 transition-all duration-300 ease-in-out active:scale-95"
       @click="validateData"
     >
       Checkout ${{
@@ -99,7 +101,7 @@ const showData = () => {
         <li v-for="(error, index) in errors" :key="index">{{ error }}</li>
       </ul>
       <button
-        class="mt-4 bg-[#00754a] text-white py-2 px-4 rounded"
+        class="mt-4 bg-[#00754a] cursor-pointer text-white py-2 px-4 rounded"
         @click="closeModal"
       >
         Close

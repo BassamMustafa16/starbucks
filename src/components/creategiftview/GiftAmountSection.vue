@@ -86,9 +86,10 @@ watch(giftAmount, (newValue) => {
       >
         <div class="relative">
           <input
-          id="custom-amount"
+            id="custom-amount"
             v-model="giftAmount"
             type="number"
+            inputmode="numeric"
             min="5"
             max="100"
             step="1"
@@ -97,14 +98,13 @@ watch(giftAmount, (newValue) => {
             required
           />
           <label
-          for="custom-amount"
+            for="custom-amount"
             :class="[
               'custom-label custom-invalid-label peer-focus:md:text-sm peer-focus:text-xs peer-focus:top-0 -translate-y-1/2',
               giftAmount === ''
                 ? ['top-1/2', 'md:text-lg']
                 : ['top-0', 'md:text-sm', 'text-xs'],
             ]"
-            
             >* Enter custom dollar amount</label
           >
         </div>
