@@ -43,7 +43,7 @@ watch(
     <transition-group name="fade" tag="div" class="flex flex-col gap-7 w-full">
       <div
         v-for="(recipient, index) in recipients"
-        :key="recipient.email"
+        :key="`recipient-${index}`"
         class="flex flex-col gap-7 w-full"
       >
         <div v-if="recipients.length > 1" class="flex justify-between w-full">
