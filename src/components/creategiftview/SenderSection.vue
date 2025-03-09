@@ -6,8 +6,13 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 
 library.add(faCircleXmark);
 
-const sender = ref({name: '', email: '', touched: false});
+const sender = ref({name: '', email: '', touched: false, valid: false});
 const emit = defineEmits(['sender']);
+const validateEmail = () => {
+  const email = sender.value.email;
+  sender.value.valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
+
 watch(sender, (newValue) => {
   emit('sender', newValue);
 }, {deep: true});
@@ -19,11 +24,13 @@ watch(sender, (newValue) => {
     <h2 class="font-semibold border-b-4 pb-3 border-[#D4E9E2] w-full">
       From
     </h2>
+    <!-- Sender Name -->
     <div class="group transition-all duration-300 ease-in-out w-full">
         <div class="relative">
           <input
             v-model="sender.name"
             type="text"
+            id="sender-name"
             :class="[
               'peer custom-input',
               sender.touched ? 'custom-invalid-input' : '',
@@ -32,6 +39,7 @@ watch(sender, (newValue) => {
             required
           />
           <label
+          for="sender-name"
             :class="[
               'custom-label peer-focus:md:text-sm peer-focus:text-xs peer-focus:top-0 -translate-y-1/2',
               sender.name === ''
@@ -50,20 +58,22 @@ watch(sender, (newValue) => {
           Please enter the sender's name.
         </p>
       </div>
-
+      <!-- Sender Email -->
       <div class="group transition-all duration-300 ease-in-out w-full">
         <div class="relative">
           <input
             v-model="sender.email"
             type="email"
+            id="sender-email"
             :class="[
               'peer custom-input',
               sender.touched ? 'custom-invalid-input' : '',
             ]"
-            @blur="sender.touched = true"
+            @blur="{sender.touched = true; validateEmail()}"
             required
           />
           <label
+          for="sender-email"
             :class="[
               'custom-label peer-focus:md:text-sm peer-focus:text-xs peer-focus:top-0 -translate-y-1/2',
               sender.email === ''

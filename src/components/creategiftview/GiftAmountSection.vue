@@ -8,12 +8,16 @@ import {
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 library.add(faGreaterThan, faCircleXmark);
+
+const customInputRef = ref(null); // Reference for custom input field
+
 const dpValue = ref(25);
 const isCustomAmount = ref(false);
 const giftAmount = ref(25);
+
 const emit = defineEmits(["giftAmount"]);
 emit("giftAmount", giftAmount.value);
-const customInputRef = ref(null); // Reference for custom input field
+
 watch(dpValue, async (newValue) => {
   if (newValue === "Custom amount") {
     isCustomAmount.value = true;
@@ -82,6 +86,7 @@ watch(giftAmount, (newValue) => {
       >
         <div class="relative">
           <input
+          id="custom-amount"
             v-model="giftAmount"
             type="number"
             min="5"
@@ -92,13 +97,14 @@ watch(giftAmount, (newValue) => {
             required
           />
           <label
+          for="custom-amount"
             :class="[
               'custom-label custom-invalid-label peer-focus:md:text-sm peer-focus:text-xs peer-focus:top-0 -translate-y-1/2',
               giftAmount === ''
                 ? ['top-1/2', 'md:text-lg']
                 : ['top-0', 'md:text-sm', 'text-xs'],
             ]"
-            @click="customInputRef.focus()"
+            
             >* Enter custom dollar amount</label
           >
         </div>

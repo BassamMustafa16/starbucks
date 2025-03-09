@@ -8,10 +8,18 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 library.add(faCircleXmark, faTrashCan);
 
 const emit = defineEmits(["recipients"]);
-const recipients = ref([{ name: "", email: "", touched: false }]);
+
+const inputEmails = ref([]);
+const recipients = ref([{ name: "", email: "", touched: false, valid: false }]);
 
 const markTouched = (index) => {
   recipients.value[index].touched = true;
+};
+
+const validateEmail = (index) => {
+  const email = recipients.value[index].email;
+  recipients.value[index].valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  markTouched(index);
 };
 
 const removeRecipient = (index) => {
@@ -43,12 +51,13 @@ watch(
           ><font-awesome-icon :icon="['far', 'trash-can']"
         /></span>
       </div>
-
+      <!-- Name Input -->
       <div class="group transition-all duration-300 ease-in-out">
         <div class="relative">
           <input
             v-model="recipient.name"
             type="text"
+            :id="'recipient-name-' + index"
             :class="[
               'peer custom-input',
               recipient.touched ? 'custom-invalid-input' : '',
@@ -57,6 +66,7 @@ watch(
             required
           />
           <label
+            :for="'recipient-name-' + index"
             :class="[
               'custom-label peer-focus:md:text-sm peer-focus:text-xs peer-focus:top-0 -translate-y-1/2',
               recipient.name === ''
@@ -75,19 +85,22 @@ watch(
           Please enter the recipient's name.
         </p>
       </div>
+      <!-- Email Input -->
       <div class="group transition-all duration-300 ease-in-out">
         <div class="relative">
           <input
             v-model="recipient.email"
             type="email"
+            :id="'recipient-email-' + index"
             :class="[
               'peer custom-input',
               recipient.touched ? 'custom-invalid-input' : '',
             ]"
-            @blur="markTouched(index)"
+            @blur="validateEmail(index)"
             required
           />
           <label
+            :for="'recipient-email-' + index"
             :class="[
               'custom-label peer-focus:md:text-sm peer-focus:text-xs peer-focus:top-0 -translate-y-1/2',
               recipient.email === ''
@@ -112,7 +125,7 @@ watch(
       v-if="recipients.length < 10"
       class="bg-black text-white py-1 px-3 rounded-full cursor-pointer"
       @click="
-        recipients.length < 10 ? recipients.push({ name: '', email: '' }) : null
+        recipients.length < 10 ? recipients.push({ name: '', email: '', touched: false, valid: false }) : null
       "
     >
       Add another recipient
