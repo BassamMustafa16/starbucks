@@ -40,6 +40,7 @@ watch(
     <h2 class="font-semibold border-b-4 pb-3 border-[#D4E9E2] w-full">
       Who are you gifting to?
     </h2>
+
     <transition-group name="fade" tag="div" class="flex flex-col gap-7 w-full">
       <div
         v-for="(recipient, index) in recipients"

@@ -6,11 +6,11 @@
     <div class="flex flex-col gap-5 md:flex-row  md:items-center">
       <p class="text-[#59625F]">Earns 2★ Stars per $1</p>
       <div class="flex flex-row gap-3 ">
-        <button class="border cursor-pointer rounded-full px-3 py-1 bg-transperant hover:bg-[#BED1CB]">
+        <button class="border text-sm md:text-base cursor-pointer rounded-full px-3 py-1 bg-transperant hover:bg-[#BED1CB]">
           Add or Reload
         </button>
         <button
-          class="border cursor-pointer rounded-full px-3 py-1 bg-black hover:bg-[#3F4543] text-white"
+          class="border text-sm md:text-base cursor-pointer rounded-full px-3 py-1 bg-black hover:bg-[#3F4543] text-white"
         >
           Check Balance
         </button>

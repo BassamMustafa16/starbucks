@@ -16,7 +16,7 @@ watch(personalNote, (newValue) => {
     </h2>
     <textarea
       v-model="personalNote"
-      class="custom-input h-[150px]"
+      class="custom-input h-[150px] resize-none"
       placeholder="Write a personal note to all recipients">
     </textarea>
 </div>

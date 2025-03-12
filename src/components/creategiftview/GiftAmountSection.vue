@@ -84,6 +84,7 @@ watch(giftAmount, (newValue) => {
         v-if="isCustomAmount"
         class="group transition-all duration-300 ease-in-out"
       >
+      <!-- Custom Amount Input -->
         <div class="relative">
           <input
             id="custom-amount"
@@ -108,6 +109,7 @@ watch(giftAmount, (newValue) => {
             >* Enter custom dollar amount</label
           >
         </div>
+        <!-- Error Message -->
         <p class="error-message">
           <font-awesome-icon :icon="['fas', 'circle-xmark']" class="" />
           Please enter a whole amount between $5 and $100

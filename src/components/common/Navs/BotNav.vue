@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="bg-[#f9f9f9] flex flex-col sticky top-0 bot-nav">
+  <div class="bg-[#f9f9f9] flex flex-col sticky top-0 bot-nav z-100">
     <ul class="flex justify-center gap-5 py-3 font-extralight">
       <li>
         <RouterLink to="/menu" class="py-2" active-class="border-b"
